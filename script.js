@@ -70,3 +70,8 @@ clearBtn.addEventListener('click', () => {
   localStorage.removeItem('events');
   eventList.innerHTML = '';
 });
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log('✅ Service Worker registrato'))
+      .catch(err => console.log('❌ Errore SW:', err));
+  }
